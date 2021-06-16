@@ -7,15 +7,26 @@ const Hero = () => {
       <picture>
         <source
           type="image/avif"
-          srcSet="/images/hero-img.avif 1x, /images/hero-img@2x.avif 2x, /images/hero-img@3x.avif 3x"
-        ></source>
+          srcSet={`
+            /images/hero-img.avif 1x,
+            /images/hero-img@2x.avif 2x,
+            /images/hero-img@3x.avif 3x
+          `}
+        />
+        <source
+          type="image/jpeg"
+          srcSet={`
+            /images/hero-img.jpg 1x,
+            /images/hero-img@2x.jpg 2x,
+            /images/hero-img@3x.jpg 3x
+          `}
+        />
         <HeroImage
           src="/images/hero-img.jpg"
-          srcSet="/images/hero-img@2x.jpg 2x, /images/hero-img@3x.jpg 3x"
-          alt=""
+          alt="An example of the photos distributed through this site (cat on black background)"
         />
       </picture>
-      <Swoop src="/swoop.svg" />
+      <Swoop alt="" src="/swoop.svg" />
     </Wrapper>
   );
 };
