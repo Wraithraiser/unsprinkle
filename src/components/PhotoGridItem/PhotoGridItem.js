@@ -10,7 +10,7 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
       <Anchor href={`/photos/${id}`}>
         <picture>
           <source type="image/avif" srcSet={srcSetAvif}></source>
-          <Image src={src} srcSet={srcSetJpg} />
+          <Image src={src} srcSet={srcSetJpg} alt={alt} />
         </picture>
       </Anchor>
       <Tags>

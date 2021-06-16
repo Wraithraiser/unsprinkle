@@ -12,6 +12,7 @@ const Hero = () => {
         <HeroImage
           src="/images/hero-img.jpg"
           srcSet="/images/hero-img@2x.jpg 2x, /images/hero-img@3x.jpg 3x"
+          alt=""
         />
       </picture>
       <Swoop src="/swoop.svg" />
