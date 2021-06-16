@@ -1,11 +1,17 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
 const PhotoGridItem = ({ id, src, alt, tags }) => {
+  const [imgName] = src.split(".");
+  const srcSetAvif = `${imgName}.avif 1x, ${imgName}@2x.avif 2x, ${imgName}@3x.avif 3x`;
+  const srcSetJpg = `${imgName}@2x.jpg 2x, ${imgName}@3x.jpg 3x`;
   return (
     <article>
       <Anchor href={`/photos/${id}`}>
-        <Image src={src} />
+        <picture>
+          <source type="image/avif" srcSet={srcSetAvif}></source>
+          <Image src={src} srcSet={srcSetJpg} />
+        </picture>
       </Anchor>
       <Tags>
         {tags.map((tag) => (
